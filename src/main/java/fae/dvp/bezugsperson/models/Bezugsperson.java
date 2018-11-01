@@ -1,4 +1,4 @@
-package fae.dvp.bezugsperson;
+package fae.dvp.bezugsperson.models;
 
 import javax.persistence.*;
 
