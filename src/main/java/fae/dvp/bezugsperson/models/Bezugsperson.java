@@ -55,6 +55,7 @@ public class Bezugsperson {
                 "Username: " + username + '\'' +
                 "Passwort: " + passwort + '\'' +
                 "Rolle: " + rolle + '}';
+       
     }
 }
 
