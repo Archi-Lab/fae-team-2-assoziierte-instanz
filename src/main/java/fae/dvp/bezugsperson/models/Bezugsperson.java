@@ -48,5 +48,13 @@ public class Bezugsperson {
     public String getUsername() {
         return username;
     }
+
+    @Override
+    public String toString(){
+       return   "Bezugsperson{" + id + '\'' +
+                "Username: " + username + '\'' +
+                "Passwort: " + passwort + '\'' +
+                "Rolle: " + rolle + '}';
+    }
 }
 
