@@ -1,9 +1,6 @@
 package fae.dvp.bezugsperson;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Bezugsperson {
@@ -13,7 +10,43 @@ public class Bezugsperson {
     private long id;
 
     private String username;
-    private String Rolle;
+    private String rolle;
     private String passwort;
 
+    @OneToOne
+    @JoinColumn(name = "dvp_id", referencedColumnName = "id")
+    private DementiellVeraendertePerson dvp;
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setPasswort(String passwort) {
+        this.passwort = passwort;
+    }
+
+    public void setRolle(String rolle) {
+        this.rolle = rolle;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getPasswort() {
+        return passwort;
+    }
+
+    public String getRolle() {
+        return rolle;
+    }
+
+    public String getUsername() {
+        return username;
+    }
 }
+
