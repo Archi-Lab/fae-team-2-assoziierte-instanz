@@ -40,8 +40,8 @@ public class AssoziierteInstanzController {
     }
 
     @PostMapping(path = "/asis")
-    AssoziierteInstanz neueAssozierteInstanz(@RequestBody AssoziierteInstanz neueAsssoziirteInstanz){
-        return assoziierteInstanzRepository.save(neueAsssoziirteInstanz);
+    AssoziierteInstanz neueAssozierteInstanz(@RequestBody AssoziierteInstanz neueAssoziirteInstanz){
+        return assoziierteInstanzRepository.save(neueAssoziirteInstanz);
     }
 
 /*    @PutMapping(path = "/asis/{id}")

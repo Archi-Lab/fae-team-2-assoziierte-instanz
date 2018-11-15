@@ -2,10 +2,11 @@ package fae.dvp.bezugsperson.repositories;
 
 import fae.dvp.bezugsperson.models.DementiellVeraendertePerson;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.stereotype.Repository;
 
 
-@Repository
+@RepositoryRestResource(path = "dvps")
 public interface DementiellVeraendertePersonRepository extends CrudRepository<DementiellVeraendertePerson, Long> {
 
     Iterable<DementiellVeraendertePerson> findAllById(int id);

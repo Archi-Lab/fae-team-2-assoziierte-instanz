@@ -28,6 +28,13 @@ public class AssoziierteInstanz {
     @Embedded
     private TelefonNummer telefonnummer;
 
+    @OneToMany(mappedBy = "asi",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<DvpAsi> dvpAsis;
+
+
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "asi_dvp",
             joinColumns = @JoinColumn(name = "asi_id", referencedColumnName = "id"),

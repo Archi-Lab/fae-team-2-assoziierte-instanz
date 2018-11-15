@@ -10,6 +10,12 @@ public class DementiellVeraendertePerson {
     @GeneratedValue (strategy = GenerationType.AUTO)
     private long id;
 
+    @OneToMany(mappedBy = "dvp",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<DvpAsi> dvpAsis;
+
     @ManyToMany(mappedBy = "dvps")
     private List<AssoziierteInstanz> asis;
 
