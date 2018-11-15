@@ -10,7 +10,8 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 public interface AssoziierteInstanzRepository extends CrudRepository<AssoziierteInstanz, Long> {
 
     Iterable<AssoziierteInstanz> findAllById(int id);
-
+    @Override
+    void deleteById(Long aLong);
 }
 
 

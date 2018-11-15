@@ -29,6 +29,8 @@ public class SampleDataLoader implements ApplicationListener<ContextRefreshedEve
         asi.setPasswort(new Passwort("hunter1"));
         asi.setRolle(Rolle.BEZUGSPERSON);
         asi.setUsername(new Username("Hans Wurst"));
+        asi.setTelefonnummer(new TelefonNummer("1234567890"));
+        asi.setId(0);
 
         final AssoziierteInstanz savedAsi = this.assoziierteInstanzRepository.save(asi);
     }
