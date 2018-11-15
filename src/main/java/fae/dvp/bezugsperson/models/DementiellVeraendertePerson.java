@@ -1,6 +1,7 @@
 package fae.dvp.bezugsperson.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class DementiellVeraendertePerson {
@@ -9,8 +10,8 @@ public class DementiellVeraendertePerson {
     @GeneratedValue (strategy = GenerationType.AUTO)
     private long id;
 
-    @OneToOne(mappedBy = "dvp")
-    private Bezugsperson bezugsperson;
+    @ManyToMany(mappedBy = "dvps")
+    private List<AssoziierteInstanz> asis;
 
     public long getId() {
         return id;

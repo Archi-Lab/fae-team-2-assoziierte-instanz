@@ -2,7 +2,7 @@ package fae.dvp.bezugsperson;
 
 import static org.junit.Assert.*;
 
-import fae.dvp.bezugsperson.models.Bezugsperson;
+import fae.dvp.bezugsperson.models.AssoziierteInstanz;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -11,28 +11,28 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import fae.dvp.bezugsperson.repositories.BezugspersonRepository;
+import fae.dvp.bezugsperson.repositories.AssoziierteInstanzRepository;
 
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
-public class BezugspersonTest {
+public class AssoziierteInstanzTest {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(BezugspersonTest.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(AssoziierteInstanzTest.class);
 
     @Autowired
-    private BezugspersonRepository bezugspersonRepository;
+    private AssoziierteInstanzRepository assoziierteInstanzRepository;
 
     @Test
     public void createBezugspersonExpectCreated(){
-        final Bezugsperson person = new Bezugsperson();
+        final AssoziierteInstanz person = new AssoziierteInstanz();
 
-        person.setRolle("Tochter");
-        person.setUsername("Egal");
-        person.setPasswort("hunter1");
+        //person.setRolle("Tochter");
+        //person.setUsername("Egal");
+        //person.setPasswort("hunter1");
 
 
-        final Bezugsperson savedPerson = this.bezugspersonRepository.save(person);
+        final AssoziierteInstanz savedPerson = this.assoziierteInstanzRepository.save(person);
 
         assertNotNull(savedPerson);
         assertNotNull(savedPerson.getId());
