@@ -34,7 +34,6 @@ public class AssoziierteInstanz {
     )
     private List<DvpAsi> dvpAsis;
 
-
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "asi_dvp",
             joinColumns = @JoinColumn(name = "asi_id", referencedColumnName = "id"),
@@ -42,7 +41,7 @@ public class AssoziierteInstanz {
             referencedColumnName = "id"))
     private List<DementiellVeraendertePerson> dvps;
 
-    public void setId(long id) {
+    public void setId(long  id) {
         this.id = id;
     }
 
@@ -92,6 +91,22 @@ public class AssoziierteInstanz {
 
     public Username getUsername() {
         return username;
+    }
+
+    public List<DvpAsi> getDvpAsis() {
+        return dvpAsis;
+    }
+
+    public void setDvpAsis(List<DvpAsi> dvpAsis) {
+        this.dvpAsis = dvpAsis;
+    }
+
+    public List<DementiellVeraendertePerson> getDvps() {
+        return dvps;
+    }
+
+    public void setDvps(List<DementiellVeraendertePerson> dvps) {
+        this.dvps = dvps;
     }
 
     @Override

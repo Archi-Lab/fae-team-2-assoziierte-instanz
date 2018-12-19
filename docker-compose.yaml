@@ -6,6 +6,7 @@ services: #Angabe aller Services
     - asi_db
     networks: # Netzwerk für die DB und dem Microservice
     - asi_ms_db
+    - fae-message-broker_backend
     ports: # Ports des Service die an die Host-Maschine übertragen werden.
     - 8080:8080
   # Spezifikation der Datenbank
@@ -27,3 +28,5 @@ volumes: # Allgemeine Volumes für das Projekt
 networks: # Allgemeine Netzwerke für das Projekt
   asi_ms_db:
     driver: bridge
+  fae-message-broker_backend:
+    external: true
