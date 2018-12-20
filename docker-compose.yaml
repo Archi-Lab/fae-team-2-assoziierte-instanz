@@ -8,7 +8,7 @@ services: #Angabe aller Services
     - asi_ms_db
     - fae-message-broker_backend
     ports: # Ports des Service die an die Host-Maschine übertragen werden.
-    - 8081:8081
+    - 8081:8080
   # Spezifikation der Datenbank
   asi_db: # Sample DB
     image: postgres:10.1 # Basis Image
