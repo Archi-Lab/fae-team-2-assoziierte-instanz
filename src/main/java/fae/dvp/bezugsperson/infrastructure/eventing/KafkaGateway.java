@@ -28,7 +28,7 @@ public class KafkaGateway {
 
     @Autowired
     public KafkaGateway(final KafkaTemplate<String, String> kafkaTemplate, final ObjectMapper objectMapper,
-                        @Value("bezugsperson") final String topic){
+                        @Value("${eventing.topic_name}") final String topic){
         this.kafkaTemplate = kafkaTemplate;
         this.objectMapper = objectMapper;
         this.topic = topic;

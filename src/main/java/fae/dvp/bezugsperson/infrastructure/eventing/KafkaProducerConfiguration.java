@@ -22,7 +22,7 @@ public class KafkaProducerConfiguration {
 
     private static final Logger log = LoggerFactory.getLogger(KafkaProducerConfiguration.class);
 
-    public KafkaProducerConfiguration(@Value("kafka:9092") final String servers){
+    public KafkaProducerConfiguration(@Value("${eventing.brokers}") final String servers){
         this.servers = servers;
         log.info(servers);
     }
