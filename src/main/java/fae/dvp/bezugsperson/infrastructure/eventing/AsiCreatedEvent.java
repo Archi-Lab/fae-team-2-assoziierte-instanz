@@ -1,12 +1,12 @@
-package fae.dvp.bezugsperson.models;
+package fae.dvp.bezugsperson.infrastructure.eventing;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import fae.dvp.bezugsperson.models.AssoziierteInstanz;
 
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
-import java.util.UUID;
 
 public class AsiCreatedEvent implements AsiEvent {
 

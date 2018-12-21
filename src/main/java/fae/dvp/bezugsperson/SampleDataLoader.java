@@ -1,5 +1,7 @@
 package fae.dvp.bezugsperson;
 
+import fae.dvp.bezugsperson.infrastructure.eventing.AsiCreatedEvent;
+import fae.dvp.bezugsperson.infrastructure.eventing.AsiEvent;
 import fae.dvp.bezugsperson.infrastructure.eventing.KafkaGateway;
 import fae.dvp.bezugsperson.models.*;
 import org.slf4j.Logger;
@@ -11,9 +13,6 @@ import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Component;
 
 import fae.dvp.bezugsperson.repositories.AssoziierteInstanzRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationListener;
-import org.springframework.context.event.ContextRefreshedEvent;
 
 import java.util.concurrent.TimeUnit;
 

@@ -1,4 +1,4 @@
-package fae.dvp.bezugsperson.models;
+package fae.dvp.bezugsperson.infrastructure.eventing;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;

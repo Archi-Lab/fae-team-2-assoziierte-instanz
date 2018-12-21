@@ -3,6 +3,7 @@ package fae.dvp.bezugsperson.infrastructure.eventing;
 import com.google.common.collect.ImmutableSet;
 import fae.dvp.bezugsperson.infrastructure.eventing.abstracts.AbstractKafkaConsumer;
 import fae.dvp.bezugsperson.infrastructure.eventing.abstracts.unprocessable.UnprocessableEventService;
+import fae.dvp.bezugsperson.models.DementiellVeraendertePerson;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.dao.TransientDataAccessException;
 import org.springframework.dao.UncategorizedDataAccessException;

@@ -6,8 +6,6 @@ import fae.dvp.bezugsperson.infrastructure.eventing.abstracts.EventProcessingSta
 import fae.dvp.bezugsperson.infrastructure.eventing.abstracts.configuration.ConsumerTopicConfig;
 import fae.dvp.bezugsperson.infrastructure.eventing.abstracts.processed.ProcessedEventService;
 import fae.dvp.bezugsperson.models.DementiellVeraendertePerson;
-import fae.dvp.bezugsperson.models.DvpEvent;
-import fae.dvp.bezugsperson.models.DvpPayload;
 import fae.dvp.bezugsperson.repositories.DementiellVeraendertePersonRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

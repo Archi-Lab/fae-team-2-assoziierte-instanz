@@ -1,27 +1,28 @@
-package fae.dvp.bezugsperson.models;
+package fae.dvp.bezugsperson.infrastructure.eventing;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import fae.dvp.bezugsperson.infrastructure.eventing.abstracts.EventPayload;
+import fae.dvp.bezugsperson.models.Vorname;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DvpPayload extends EventPayload {
 
     private long id;
-    private String vorname;
+//    private Vorname vorname;
 //    private String nachname;
 //    private String alter;
 //    private String bild;
 //    private String tracker;
 
-    public String getVorname() {
-        return vorname;
-    }
-
-    public void setVorname(String vorname) {
-        this.vorname = vorname;
-    }
+//    public Vorname getVorname() {
+//        return vorname;
+//    }
+//
+//    public void setVorname(Vorname vorname) {
+//        this.vorname = vorname;
+//    }
 
 //    public String getNachname() {
 //        return nachname;
