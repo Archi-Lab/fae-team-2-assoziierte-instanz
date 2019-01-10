@@ -1,4 +1,4 @@
-package fae.dvp.bezugsperson.controller;
+/**package fae.dvp.bezugsperson.controller;
 
 import fae.dvp.bezugsperson.models.DvpAsi;
 import fae.dvp.bezugsperson.repositories.DvpAsiRepository;
@@ -44,4 +44,4 @@ public class DvpAsiController {
         dvpAsiRepository.deleteById(id);
     }
 
-}
+}**/

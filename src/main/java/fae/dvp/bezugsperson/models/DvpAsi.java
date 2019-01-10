@@ -1,4 +1,4 @@
-package fae.dvp.bezugsperson.models;
+/**package fae.dvp.bezugsperson.models;
 
 import javax.persistence.*;
 
@@ -35,3 +35,4 @@ public class DvpAsi {
         return rolle;
     }
 }
+**/

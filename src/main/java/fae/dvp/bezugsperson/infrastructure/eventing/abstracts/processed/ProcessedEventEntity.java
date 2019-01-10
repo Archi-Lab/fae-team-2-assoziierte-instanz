@@ -12,6 +12,10 @@ public class ProcessedEventEntity {
         this.version = version;
     }
 
+    public ProcessedEventEntity(){
+
+    }
+
     @Id
     @GeneratedValue
     private Long id;

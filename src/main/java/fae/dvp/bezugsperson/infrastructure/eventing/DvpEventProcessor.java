@@ -32,6 +32,7 @@ public class DvpEventProcessor extends AbstractDomainEventProcessor<DvpPayload, 
             case "dvp-created":
             case "dvp-updated":
                 repository.save(toDvp(dvpEvent));
+                LOG.info("dvp saved");
                 break;
             default:
                 LOG.warn("Unexpected type: '{}' of message with key '{}'", dvpEvent.getType(),

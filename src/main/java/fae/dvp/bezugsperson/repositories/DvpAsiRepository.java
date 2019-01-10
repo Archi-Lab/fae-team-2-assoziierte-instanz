@@ -1,4 +1,4 @@
-package fae.dvp.bezugsperson.repositories;
+/**package fae.dvp.bezugsperson.repositories;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
@@ -11,4 +11,4 @@ public interface DvpAsiRepository extends CrudRepository<DvpAsi, Long> {
 
     Iterable<DvpAsi> findAllById(int id);
 
-}
+}**/

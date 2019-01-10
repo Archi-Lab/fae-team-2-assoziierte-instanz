@@ -15,11 +15,11 @@ public class DementiellVeraendertePerson {
 //    @Embedded
 //    private Vorname vorname;
 
-    @OneToMany(mappedBy = "dvp",
+    /**@OneToMany(mappedBy = "dvp",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<DvpAsi> dvpAsis;
+    private List<DvpAsi> dvpAsis;**/
 
     @ManyToMany(mappedBy = "dvps")
     private List<AssoziierteInstanz> asis;
