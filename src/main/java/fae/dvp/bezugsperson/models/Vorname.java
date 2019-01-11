@@ -8,8 +8,6 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class Vorname {
 
-    @Getter
-    @Setter
     private String vorname;
 
     public Vorname(){

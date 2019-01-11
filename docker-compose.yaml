@@ -6,9 +6,9 @@ services: #Angabe aller Services
     - asi_db
     networks: # Netzwerk für die DB und dem Microservice
     - fae-team-2-bezugsperson_asi_ms_db
-    - fae-message-broker_backend
+    - fae-message-broker_kafka-broker_backend
     ports: # Ports des Service die an die Host-Maschine übertragen werden.
-    - 8081:8080
+    - 8021:8021
   # Spezifikation der Datenbank
   asi_db: # Sample DB
     image: postgres:10.1 # Basis Image
@@ -28,5 +28,5 @@ volumes: # Allgemeine Volumes für das Projekt
 networks: # Allgemeine Netzwerke für das Projekt
   fae-team-2-bezugsperson_asi_ms_db:
     driver: bridge
-  fae-message-broker_backend:
+  fae-message-broker_kafka-broker_backend:
     external: true
