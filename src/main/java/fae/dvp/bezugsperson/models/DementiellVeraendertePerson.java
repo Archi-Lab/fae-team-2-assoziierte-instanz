@@ -10,10 +10,11 @@ import java.util.List;
 public class DementiellVeraendertePerson {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
-    private long id;
-//    @Embedded
-//    private Vorname vorname;
+    private String id;
+    @Embedded
+    private Vorname vorname;
+    @Embedded
+    private Nachname nachname;
 
     /**@OneToMany(mappedBy = "dvp",
             cascade = CascadeType.ALL,
@@ -24,17 +25,25 @@ public class DementiellVeraendertePerson {
     @ManyToMany(mappedBy = "dvps")
     private List<AssoziierteInstanz> asis;
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
 
-//    public Vorname getVorname() { return vorname; }
-//
-//    public void setVorname(Vorname vorname) { this.vorname = vorname; }
+    public Nachname getNachname() {
+        return nachname;
+    }
+
+    public void setNachname(Nachname nachname) {
+        this.nachname = nachname;
+    }
+
+    public Vorname getVorname() { return vorname; }
+
+    public void setVorname(Vorname vorname) { this.vorname = vorname; }
 }
 

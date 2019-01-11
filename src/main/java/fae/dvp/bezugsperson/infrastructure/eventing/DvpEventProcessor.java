@@ -45,7 +45,8 @@ public class DvpEventProcessor extends AbstractDomainEventProcessor<DvpPayload, 
     private DementiellVeraendertePerson toDvp(final DvpEvent dvpEvent) {
         final DementiellVeraendertePerson dvp = new DementiellVeraendertePerson();
         dvp.setId(dvpEvent.getPayload().getId());
-
+        dvp.setVorname(dvpEvent.getPayload().getVorname());
+        dvp.setNachname(dvpEvent.getPayload().getNachname());
         return dvp;
     }
 

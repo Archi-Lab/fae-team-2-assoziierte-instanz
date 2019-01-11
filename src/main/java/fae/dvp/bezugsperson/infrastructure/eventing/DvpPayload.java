@@ -3,34 +3,32 @@ package fae.dvp.bezugsperson.infrastructure.eventing;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import fae.dvp.bezugsperson.infrastructure.eventing.abstracts.EventPayload;
+import fae.dvp.bezugsperson.models.Nachname;
 import fae.dvp.bezugsperson.models.Vorname;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DvpPayload extends EventPayload {
 
-    private long id;
-//    private Vorname vorname;
-//    private String nachname;
-//    private String alter;
-//    private String bild;
-//    private String tracker;
+    private String id;
+    private Vorname vorname;
+    private Nachname nachname;
 
-//    public Vorname getVorname() {
-//        return vorname;
-//    }
-//
-//    public void setVorname(Vorname vorname) {
-//        this.vorname = vorname;
-//    }
+    public Vorname getVorname() {
+        return vorname;
+    }
 
-//    public String getNachname() {
-//        return nachname;
-//    }
-//
-//    public void setNachname(String nachname) {
-//        this.nachname = nachname;
-//    }
+    public void setVorname(Vorname vorname) {
+        this.vorname = vorname;
+    }
+
+    public Nachname getNachname() {
+        return nachname;
+    }
+
+    public void setNachname(Nachname nachname) {
+        this.nachname = nachname;
+    }
 //
 //    public String getAlter() {
 //        return alter;
@@ -56,11 +54,11 @@ public class DvpPayload extends EventPayload {
 //        this.tracker = tracker;
 //    }
 
-    public long getId() {
+    public String getId(){
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 }

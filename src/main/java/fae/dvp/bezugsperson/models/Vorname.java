@@ -25,6 +25,14 @@ public class Vorname {
         this.vorname = vorname;
     }
 
+    public String getVorname() {
+        return vorname;
+    }
+
+    public void setVorname(String vorname) {
+        this.vorname = vorname;
+    }
+
     @Override
     public String toString() {
         return "Vorname{" +
