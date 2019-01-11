@@ -2,7 +2,6 @@ package fae.dvp.bezugsperson.infrastructure.eventing;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import fae.dvp.bezugsperson.models.AsiEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +27,7 @@ public class KafkaGateway {
 
     @Autowired
     public KafkaGateway(final KafkaTemplate<String, String> kafkaTemplate, final ObjectMapper objectMapper,
-                        @Value("bezugsperson") final String topic){
+                        @Value("${eventing.topic_name}") final String topic){
         this.kafkaTemplate = kafkaTemplate;
         this.objectMapper = objectMapper;
         this.topic = topic;

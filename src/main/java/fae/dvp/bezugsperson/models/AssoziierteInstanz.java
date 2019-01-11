@@ -28,11 +28,11 @@ public class AssoziierteInstanz {
     @Embedded
     private TelefonNummer telefonnummer;
 
-    @OneToMany(mappedBy = "asi",
+    /**@OneToMany(mappedBy = "asi",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<DvpAsi> dvpAsis;
+    private List<DvpAsi> dvpAsis;**/
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "asi_dvp",
@@ -93,13 +93,13 @@ public class AssoziierteInstanz {
         return username;
     }
 
-    public List<DvpAsi> getDvpAsis() {
+    /**public List<DvpAsi> getDvpAsis() {
         return dvpAsis;
     }
 
     public void setDvpAsis(List<DvpAsi> dvpAsis) {
         this.dvpAsis = dvpAsis;
-    }
+    }**/
 
     public List<DementiellVeraendertePerson> getDvps() {
         return dvps;

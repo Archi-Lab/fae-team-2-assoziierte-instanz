@@ -5,7 +5,7 @@ services: #Angabe aller Services
     depends_on: # Der Service wartet auf den Start der DB.
     - asi_db
     networks: # Netzwerk für die DB und dem Microservice
-    - asi_ms_db
+    - fae-team-2-bezugsperson_asi_ms_db
     - fae-message-broker_backend
     ports: # Ports des Service die an die Host-Maschine übertragen werden.
     - 8081:8080
@@ -22,11 +22,11 @@ services: #Angabe aller Services
     - JAVA_TOOL_OPTIONS=-Xms128m -Xmx256m
     restart: always # Bei einem Abstaurz soll die DB immer neu starten.
     networks: # Netzwerk für die DB und dem Microservice
-    - asi_ms_db
+    - fae-team-2-bezugsperson_asi_ms_db
 volumes: # Allgemeine Volumes für das Projekt
   asi_db: {}
 networks: # Allgemeine Netzwerke für das Projekt
-  asi_ms_db:
+  fae-team-2-bezugsperson_asi_ms_db:
     driver: bridge
   fae-message-broker_backend:
     external: true

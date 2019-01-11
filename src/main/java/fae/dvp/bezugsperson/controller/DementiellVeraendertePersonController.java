@@ -29,6 +29,10 @@ public class DementiellVeraendertePersonController {
         Resources<DementiellVeraendertePerson> resources = new Resources<>(dementiellVeraendertePersonList);
 
         resources.add(linkTo(methodOn(DementiellVeraendertePersonController.class).getdvps()).withSelfRel());
+        for (final DementiellVeraendertePerson dvp:dementiellVeraendertePersonList
+             ) {
+            resources.add(linkTo(methodOn(DementiellVeraendertePersonController.class).getdvps()).slash(dvp.getId()).withRel(dvp.getId()));
+        }
 
         return  ResponseEntity.ok(resources);
     }
@@ -40,7 +44,7 @@ public class DementiellVeraendertePersonController {
 
 
     @DeleteMapping("/dvps/{id}")
-    void loeschedvp(@PathVariable Long id){
+    void loeschedvp(@PathVariable String id){
         dementiellVeraendertePersonRepository.deleteById(id);
     }
 

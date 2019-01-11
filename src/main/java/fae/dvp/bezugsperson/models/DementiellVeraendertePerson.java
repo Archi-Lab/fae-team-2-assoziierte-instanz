@@ -1,5 +1,8 @@
 package fae.dvp.bezugsperson.models;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -7,23 +10,40 @@ import java.util.List;
 public class DementiellVeraendertePerson {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
-    private long id;
+    private String id;
+    @Embedded
+    private Vorname vorname;
+    @Embedded
+    private Nachname nachname;
 
-    @OneToMany(mappedBy = "dvp",
+    /**@OneToMany(mappedBy = "dvp",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<DvpAsi> dvpAsis;
+    private List<DvpAsi> dvpAsis;**/
 
     @ManyToMany(mappedBy = "dvps")
     private List<AssoziierteInstanz> asis;
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
+
+
+    public Nachname getNachname() {
+        return nachname;
+    }
+
+    public void setNachname(Nachname nachname) {
+        this.nachname = nachname;
+    }
+
+    public Vorname getVorname() { return vorname; }
+
+    public void setVorname(Vorname vorname) { this.vorname = vorname; }
 }
+

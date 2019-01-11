@@ -7,8 +7,6 @@ import org.springframework.stereotype.Repository;
 
 
 @RepositoryRestResource(path = "dvps")
-public interface DementiellVeraendertePersonRepository extends CrudRepository<DementiellVeraendertePerson, Long> {
-
-    Iterable<DementiellVeraendertePerson> findAllById(int id);
+public interface DementiellVeraendertePersonRepository extends CrudRepository<DementiellVeraendertePerson, String> {
 
 }
