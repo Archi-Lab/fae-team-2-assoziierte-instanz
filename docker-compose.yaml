@@ -5,10 +5,10 @@ services: #Angabe aller Services
     depends_on: # Der Service wartet auf den Start der DB.
     - asi_db
     networks: # Netzwerk für die DB und dem Microservice
-    - fae-team-2-bezugsperson_asi_ms_db
-    - fae-message-broker_kafka-broker_backend
+    - asi_ms_db
+    - fae-message-broker_backend
     ports: # Ports des Service die an die Host-Maschine übertragen werden.
-    - 8021:8021
+    - 8021
   # Spezifikation der Datenbank
   asi_db: # Sample DB
     image: postgres:10.1 # Basis Image
@@ -22,11 +22,11 @@ services: #Angabe aller Services
     - JAVA_TOOL_OPTIONS=-Xms128m -Xmx256m
     restart: always # Bei einem Abstaurz soll die DB immer neu starten.
     networks: # Netzwerk für die DB und dem Microservice
-    - fae-team-2-bezugsperson_asi_ms_db
+    - asi_ms_db
 volumes: # Allgemeine Volumes für das Projekt
   asi_db: {}
 networks: # Allgemeine Netzwerke für das Projekt
-  fae-team-2-bezugsperson_asi_ms_db:
+  asi_ms_db:
     driver: bridge
-  fae-message-broker_kafka-broker_backend:
+  fae-message-broker_backend:
     external: true

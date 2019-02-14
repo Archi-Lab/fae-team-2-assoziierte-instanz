@@ -5,7 +5,6 @@ import de.th.koeln.fae.microservice_assoziierte_instanz.repositories.Assoziierte
 import de.th.koeln.fae.microservice_assoziierte_instanz.infrastructure.eventing.AsiCreatedEvent;
 import de.th.koeln.fae.microservice_assoziierte_instanz.infrastructure.eventing.AsiEvent;
 import de.th.koeln.fae.microservice_assoziierte_instanz.infrastructure.eventing.KafkaGateway;
-import fae.dvp.bezugsperson.models.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
