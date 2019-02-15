@@ -1,4 +1,4 @@
-package de.th.koeln.fae.microservice_assoziierte_instanz.controller;
+package de.th.koeln.fae.microservice_assoziierte_instanz.infrastructure.controller;
 
 import de.th.koeln.fae.microservice_assoziierte_instanz.models.DementiellVeraendertePerson;
 import de.th.koeln.fae.microservice_assoziierte_instanz.repositories.DementiellVeraendertePersonRepository;

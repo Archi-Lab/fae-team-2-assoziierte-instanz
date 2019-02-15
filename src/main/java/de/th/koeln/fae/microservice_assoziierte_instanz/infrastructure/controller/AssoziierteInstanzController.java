@@ -1,4 +1,4 @@
-package de.th.koeln.fae.microservice_assoziierte_instanz.controller;
+package de.th.koeln.fae.microservice_assoziierte_instanz.infrastructure.controller;
 
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
