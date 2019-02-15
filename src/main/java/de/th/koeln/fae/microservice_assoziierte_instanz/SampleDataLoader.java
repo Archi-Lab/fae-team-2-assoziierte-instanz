@@ -19,9 +19,6 @@ public class SampleDataLoader implements ApplicationListener<ContextRefreshedEve
     @Autowired
     private AssoziierteInstanzRepository assoziierteInstanzRepository;
 
-    @Autowired
-    private BezugspersonApplication bezugspersonApplication;
-
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
         final AssoziierteInstanz asi = new AssoziierteInstanz();

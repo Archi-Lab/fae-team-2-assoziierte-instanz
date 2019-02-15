@@ -28,7 +28,7 @@ public class AssoziierteInstanz extends EntityUUID4 implements EventSource {
     private Email email;
 
     @Embedded
-    private Name vorname;
+    private Vorname vorname;
 
     @Embedded
     private Nachname nachname;
@@ -69,7 +69,7 @@ public class AssoziierteInstanz extends EntityUUID4 implements EventSource {
         this.email = email;
     }
 
-    public void setVorname(Name vorname) {this.vorname = vorname;}
+    public void setVorname(Vorname vorname) {this.vorname = vorname;}
 
     public void setTelefonnummer(TelefonNummer telefonnummer) {
         this.telefonnummer = telefonnummer;
@@ -79,7 +79,7 @@ public class AssoziierteInstanz extends EntityUUID4 implements EventSource {
         return email;
     }
 
-    public Name getVorname() {return vorname;}
+    public Vorname getVorname() {return vorname;}
 
     public Passwort getPasswort() {
         return passwort;
