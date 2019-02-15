@@ -1,4 +1,4 @@
-# Dementiell Veränderte Person
+# Assoziierte Instanz
 
 Dies ist der Microservice zur Verwaltung von Bezugspersonen und Hauptverantwortlichen
 der dementiell veränderten Personen (DVP). 
