@@ -11,9 +11,13 @@ public class Username {
         this.name = name;
     }
 
-    public Username(){this.name = null;}
+    public Username(){}
 
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

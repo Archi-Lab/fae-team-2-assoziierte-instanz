@@ -11,9 +11,13 @@ public class Passwort {
         this.passwort = passwort;
     }
 
-    public Passwort(){this.passwort = null;}
+    public Passwort(){}
 
     public String getPasswort() {
         return passwort;
+    }
+
+    public void setPasswort(String passwort) {
+        this.passwort = passwort;
     }
 }

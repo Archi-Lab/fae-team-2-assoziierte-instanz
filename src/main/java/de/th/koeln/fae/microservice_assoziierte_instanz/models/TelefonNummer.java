@@ -11,10 +11,14 @@ public class TelefonNummer {
         this.nummer = nummer;
     }
 
-    public TelefonNummer(){this.nummer=null;}
+    public TelefonNummer(){}
 
     public String getNummer() {
         return nummer;
+    }
+
+    public void setNummer(String nummer) {
+        this.nummer = nummer;
     }
 }
 

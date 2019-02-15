@@ -5,17 +5,20 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class Email {
 
-    private String Email;
+    private String email;
 
     public Email(String Email){
-        this.Email = Email;
+        this.email = Email;
     }
 
     public  Email(){
-        this.Email = null;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
