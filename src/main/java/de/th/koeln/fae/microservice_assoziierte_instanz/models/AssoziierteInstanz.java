@@ -13,7 +13,7 @@ import java.util.List;
 public class AssoziierteInstanz extends EntityUUID4 implements EventSource {
 
     @Version
-    private Long version;
+    private Long version = 0L;
 
     @Embedded
     private Username username;
@@ -46,6 +46,10 @@ public class AssoziierteInstanz extends EntityUUID4 implements EventSource {
     @Override
     public Long getVersion() {
         return version;
+    }
+
+    public void setVersion(Long version) {
+        this.version = version;
     }
 
     @Override
