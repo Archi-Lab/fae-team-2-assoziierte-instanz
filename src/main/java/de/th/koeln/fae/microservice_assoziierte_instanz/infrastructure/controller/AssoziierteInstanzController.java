@@ -3,6 +3,8 @@ package de.th.koeln.fae.microservice_assoziierte_instanz.infrastructure.controll
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 
+import de.th.koeln.fae.microservice_assoziierte_instanz.models.DementiellVeraendertePerson;
+import de.th.koeln.fae.microservice_assoziierte_instanz.repositories.DementiellVeraendertePersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.hateoas.Resources;
@@ -12,14 +14,18 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 import de.th.koeln.fae.microservice_assoziierte_instanz.repositories.AssoziierteInstanzRepository;
 import de.th.koeln.fae.microservice_assoziierte_instanz.models.AssoziierteInstanz;
 
+import java.util.UUID;
+
 @RepositoryRestController
 public class AssoziierteInstanzController {
 
     private final AssoziierteInstanzRepository assoziierteInstanzRepository;
+    private final DementiellVeraendertePersonRepository dvpRepo;
 
     @Autowired
-    public AssoziierteInstanzController(AssoziierteInstanzRepository assoziierteInstanzRepository){
+    public AssoziierteInstanzController(AssoziierteInstanzRepository assoziierteInstanzRepository, DementiellVeraendertePersonRepository dvpRepo){
         this.assoziierteInstanzRepository = assoziierteInstanzRepository;
+        this.dvpRepo = dvpRepo;
     }
 
 
@@ -39,14 +45,12 @@ public class AssoziierteInstanzController {
         return assoziierteInstanzRepository.save(neueAssoziirteInstanz);
     }
 
-/*    @PutMapping(path = "/asis/{id}")
-    AssoziierteInstanz ersetzeAssozierteInstanz(@RequestBody AssoziierteInstanz neueAsi, @PathVariable int id){
-        return assoziierteInstanzRepository.findAllById(id)
-        .map(assozierteInstanz -> {
-            assozierteInstanz.set
-        }
-        )
-    }*/
+//    @PutMapping(path = "/asis/{asiid}")
+//    AssoziierteInstanz verknupfeDVP(@RequestParam(value = "dvpid", required = false) String dvpid, @PathVariable UUID asiid){
+//        DementiellVeraendertePerson dvp = dvpRepo.findById(UUID.fromString(dvpid));
+//
+//
+//    }
 
     @DeleteMapping("/asis/{id}")
     void loescheAsi(@PathVariable Long id){
