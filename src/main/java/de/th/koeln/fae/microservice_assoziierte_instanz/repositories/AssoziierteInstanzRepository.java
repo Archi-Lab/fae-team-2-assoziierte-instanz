@@ -4,13 +4,11 @@ import de.th.koeln.fae.microservice_assoziierte_instanz.models.AssoziierteInstan
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
+import java.util.UUID;
+
 
 @RepositoryRestResource(path = "asis")
-public interface AssoziierteInstanzRepository extends CrudRepository<AssoziierteInstanz, Long> {
-
-    Iterable<AssoziierteInstanz> findAllById(int id);
-    @Override
-    void deleteById(Long aLong);
+public interface AssoziierteInstanzRepository extends CrudRepository<AssoziierteInstanz, UUID> {
 }
 
 

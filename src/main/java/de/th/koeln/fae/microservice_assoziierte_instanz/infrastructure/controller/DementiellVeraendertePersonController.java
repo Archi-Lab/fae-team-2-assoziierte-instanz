@@ -37,15 +37,15 @@ public class DementiellVeraendertePersonController {
         return  ResponseEntity.ok(resources);
     }
 
-    @PostMapping(path = "/dvps")
-    DementiellVeraendertePerson neuedvp(@RequestBody DementiellVeraendertePerson neueDvp){
-        return dementiellVeraendertePersonRepository.save(neueDvp);
-    }
-
-
-    @DeleteMapping("/dvps/{id}")
-    void loeschedvp(@PathVariable String id){
-        dementiellVeraendertePersonRepository.deleteById(id);
-    }
+//    @PostMapping(path = "/dvps")
+//    DementiellVeraendertePerson neuedvp(@RequestBody DementiellVeraendertePerson neueDvp){
+//        return dementiellVeraendertePersonRepository.save(neueDvp);
+//    }
+//
+//
+//    @DeleteMapping("/dvps/{id}")
+//    void loeschedvp(@PathVariable String id){
+//        dementiellVeraendertePersonRepository.deleteById(id);
+//    }
 
 }
