@@ -1,11 +1,15 @@
 package de.th.koeln.fae.microservice_assoziierte_instanz.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import de.th.koeln.fae.microservice_assoziierte_instanz.infrastructure.eventing.produce.EventPublishingEntityListener;
 import de.th.koeln.fae.microservice_assoziierte_instanz.infrastructure.eventing.produce.EventSource;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@EntityListeners(EventPublishingEntityListener.class)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class AssoziierteInstanz extends EntityUUID4 implements EventSource {
 
     @Version
@@ -32,7 +36,7 @@ public class AssoziierteInstanz extends EntityUUID4 implements EventSource {
     @Embedded
     private TelefonNummer telefonnummer;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(name = "asi_dvp",
             joinColumns = @JoinColumn(name = "asi_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "dvp_id",
