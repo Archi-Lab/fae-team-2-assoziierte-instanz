@@ -1,14 +1,15 @@
 package de.th.koeln.fae.microservice_assoziierte_instanz.models;
 
+import de.th.koeln.fae.microservice_assoziierte_instanz.infrastructure.eventing.produce.EventSource;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class AssoziierteInstanz {
+public class AssoziierteInstanz extends EntityUUID4 implements EventSource {
 
-    @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
-    private long id;
+    @Version
+    private Long version;
 
     @Embedded
     private Username username;
@@ -22,17 +23,14 @@ public class AssoziierteInstanz {
     @Embedded
     private Email email;
 
-    //@Embedded
-    //private Name vorname;
+    @Embedded
+    private Name vorname;
+
+    @Embedded
+    private Nachname nachname;
 
     @Embedded
     private TelefonNummer telefonnummer;
-
-    /**@OneToMany(mappedBy = "asi",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
-    )
-    private List<DvpAsi> dvpAsis;**/
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "asi_dvp",
@@ -41,12 +39,14 @@ public class AssoziierteInstanz {
             referencedColumnName = "id"))
     private List<DementiellVeraendertePerson> dvps;
 
-    public void setId(long  id) {
-        this.id = id;
+    @Override
+    public Long getVersion() {
+        return version;
     }
 
-    public long getId() {
-        return id;
+    @Override
+    public String getAggregateName() {
+        return "asi";
     }
 
     public void setUsername(Username username) {
@@ -65,7 +65,7 @@ public class AssoziierteInstanz {
         this.email = email;
     }
 
-    //public void setVorname(Name vorname) {this.vorname = vorname;}
+    public void setVorname(Name vorname) {this.vorname = vorname;}
 
     public void setTelefonnummer(TelefonNummer telefonnummer) {
         this.telefonnummer = telefonnummer;
@@ -75,7 +75,7 @@ public class AssoziierteInstanz {
         return email;
     }
 
-    //public Name getVorname() {return vorname;}
+    public Name getVorname() {return vorname;}
 
     public Passwort getPasswort() {
         return passwort;
@@ -93,13 +93,13 @@ public class AssoziierteInstanz {
         return username;
     }
 
-    /**public List<DvpAsi> getDvpAsis() {
-        return dvpAsis;
+    public Nachname getNachname() {
+        return nachname;
     }
 
-    public void setDvpAsis(List<DvpAsi> dvpAsis) {
-        this.dvpAsis = dvpAsis;
-    }**/
+    public void setNachname(Nachname nachname) {
+        this.nachname = nachname;
+    }
 
     public List<DementiellVeraendertePerson> getDvps() {
         return dvps;
@@ -111,7 +111,7 @@ public class AssoziierteInstanz {
 
     @Override
     public String toString(){
-       return   "AssoziierteInstanz{" + id + '\'' +
+       return   "AssoziierteInstanz{" + getId() + '\'' +
                 "Username: " + username + '\'' +
                 "Passwort: " + passwort + '\'' +
                 "Rolle: " + rolle + '}';

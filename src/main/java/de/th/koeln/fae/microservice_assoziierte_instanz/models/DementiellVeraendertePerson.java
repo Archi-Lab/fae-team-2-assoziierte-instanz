@@ -4,32 +4,15 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class DementiellVeraendertePerson {
+public class DementiellVeraendertePerson extends EntityUUID4{
 
-    @Id
-    private String id;
     @Embedded
     private Vorname vorname;
     @Embedded
     private Nachname nachname;
 
-    /**@OneToMany(mappedBy = "dvp",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
-    )
-    private List<DvpAsi> dvpAsis;**/
-
     @ManyToMany(mappedBy = "dvps")
     private List<AssoziierteInstanz> asis;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
 
     public Nachname getNachname() {
         return nachname;

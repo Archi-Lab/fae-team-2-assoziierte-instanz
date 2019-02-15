@@ -31,7 +31,7 @@ public class DementiellVeraendertePersonController {
         resources.add(linkTo(methodOn(DementiellVeraendertePersonController.class).getdvps()).withSelfRel());
         for (final DementiellVeraendertePerson dvp:dementiellVeraendertePersonList
              ) {
-            resources.add(linkTo(methodOn(DementiellVeraendertePersonController.class).getdvps()).slash(dvp.getId()).withRel(dvp.getId()));
+            resources.add(linkTo(methodOn(DementiellVeraendertePersonController.class).getdvps()).slash(dvp.getId()).withRel(dvp.getId().toString()));
         }
 
         return  ResponseEntity.ok(resources);

@@ -2,9 +2,6 @@ package de.th.koeln.fae.microservice_assoziierte_instanz;
 
 import de.th.koeln.fae.microservice_assoziierte_instanz.models.*;
 import de.th.koeln.fae.microservice_assoziierte_instanz.repositories.AssoziierteInstanzRepository;
-import de.th.koeln.fae.microservice_assoziierte_instanz.infrastructure.eventing.AsiCreatedEvent;
-import de.th.koeln.fae.microservice_assoziierte_instanz.infrastructure.eventing.AsiEvent;
-import de.th.koeln.fae.microservice_assoziierte_instanz.infrastructure.eventing.KafkaGateway;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,13 +22,6 @@ public class SampleDataLoader implements ApplicationListener<ContextRefreshedEve
     @Autowired
     private BezugspersonApplication bezugspersonApplication;
 
-    private final KafkaGateway eventPublisher;
-    private static final Logger log = LoggerFactory.getLogger(SampleDataLoader.class);
-    @Autowired
-    SampleDataLoader(final KafkaGateway eventPublisher){
-        this.eventPublisher = eventPublisher;
-    }
-
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
         final AssoziierteInstanz asi = new AssoziierteInstanz();
@@ -41,18 +31,9 @@ public class SampleDataLoader implements ApplicationListener<ContextRefreshedEve
         asi.setRolle(Rolle.BEZUGSPERSON);
         asi.setUsername(new Username("Hans Wurst"));
         asi.setTelefonnummer(new TelefonNummer("1234567890"));
-        asi.setId(0);
 
         final AssoziierteInstanz savedAsi = this.assoziierteInstanzRepository.save(asi);
 
-        AsiEvent asiEvent = new AsiCreatedEvent(asi);
-        try {
-            SendResult<String, String> sendResult = eventPublisher.publishTrackingEvent(asiEvent)
-                    .get(1, TimeUnit.SECONDS);
-            log.info(sendResult.toString());
-        } catch (final Exception e){
-            log.info("An " + e.getClass() + " occured!");
-        }
     }
 }
 
