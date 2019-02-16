@@ -2,7 +2,7 @@ package de.th.koeln.fae.microservice_assoziierte_instanz;
 
 import static org.junit.Assert.*;
 
-import de.th.koeln.fae.microservice_assoziierte_instanz.models.AssoziierteInstanz;
+import de.th.koeln.fae.microservice_assoziierte_instanz.models.Asi.AssoziierteInstanz;
 import de.th.koeln.fae.microservice_assoziierte_instanz.repositories.AssoziierteInstanzRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;

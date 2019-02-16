@@ -1,16 +1,12 @@
 package de.th.koeln.fae.microservice_assoziierte_instanz;
 
 import de.th.koeln.fae.microservice_assoziierte_instanz.models.*;
+import de.th.koeln.fae.microservice_assoziierte_instanz.models.Asi.*;
 import de.th.koeln.fae.microservice_assoziierte_instanz.repositories.AssoziierteInstanzRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
-import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Component;
-
-import java.util.concurrent.TimeUnit;
 
 
 @Component

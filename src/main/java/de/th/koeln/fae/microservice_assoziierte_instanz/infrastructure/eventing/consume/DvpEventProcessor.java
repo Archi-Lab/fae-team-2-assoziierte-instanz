@@ -5,7 +5,7 @@ import de.th.koeln.fae.microservice_assoziierte_instanz.infrastructure.eventing.
 import de.th.koeln.fae.microservice_assoziierte_instanz.infrastructure.eventing.consume.abstracts.EventProcessingState;
 import de.th.koeln.fae.microservice_assoziierte_instanz.infrastructure.eventing.consume.abstracts.configuration.ConsumerTopicConfig;
 import de.th.koeln.fae.microservice_assoziierte_instanz.infrastructure.eventing.consume.abstracts.processed.ProcessedEventService;
-import de.th.koeln.fae.microservice_assoziierte_instanz.models.DementiellVeraendertePerson;
+import de.th.koeln.fae.microservice_assoziierte_instanz.models.dvp.DementiellVeraendertePerson;
 import de.th.koeln.fae.microservice_assoziierte_instanz.repositories.DementiellVeraendertePersonRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

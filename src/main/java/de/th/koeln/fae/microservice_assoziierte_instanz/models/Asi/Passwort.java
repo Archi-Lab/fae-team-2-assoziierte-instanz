@@ -1,4 +1,4 @@
-package de.th.koeln.fae.microservice_assoziierte_instanz.models;
+package de.th.koeln.fae.microservice_assoziierte_instanz.models.Asi;
 
 import javax.persistence.Embeddable;
 

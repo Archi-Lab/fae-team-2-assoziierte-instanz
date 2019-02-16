@@ -1,6 +1,6 @@
 package de.th.koeln.fae.microservice_assoziierte_instanz.infrastructure.controller;
 
-import de.th.koeln.fae.microservice_assoziierte_instanz.models.DementiellVeraendertePerson;
+import de.th.koeln.fae.microservice_assoziierte_instanz.models.dvp.DementiellVeraendertePerson;
 import de.th.koeln.fae.microservice_assoziierte_instanz.repositories.DementiellVeraendertePersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
@@ -21,7 +21,11 @@ public class DementiellVeraendertePersonController {
         this.dementiellVeraendertePersonRepository = dementiellVeraendertePersonRepository;
     }
 
-
+    /**
+     * Diese Methode hängt an das übliche GET /dvps alle Links zu den Resourcen an.
+     *
+     * @return Alle DVP Objekte mit Links zu jeder DVP (UUID: linkToDVP)
+     */
     @GetMapping(path = "/dvps")
     public ResponseEntity<?> getdvps(){
         final Iterable<DementiellVeraendertePerson> dementiellVeraendertePersonList = this.dementiellVeraendertePersonRepository.findAll();
@@ -36,16 +40,4 @@ public class DementiellVeraendertePersonController {
 
         return  ResponseEntity.ok(resources);
     }
-
-//    @PostMapping(path = "/dvps")
-//    DementiellVeraendertePerson neuedvp(@RequestBody DementiellVeraendertePerson neueDvp){
-//        return dementiellVeraendertePersonRepository.save(neueDvp);
-//    }
-//
-//
-//    @DeleteMapping("/dvps/{id}")
-//    void loeschedvp(@PathVariable String id){
-//        dementiellVeraendertePersonRepository.deleteById(id);
-//    }
-
 }

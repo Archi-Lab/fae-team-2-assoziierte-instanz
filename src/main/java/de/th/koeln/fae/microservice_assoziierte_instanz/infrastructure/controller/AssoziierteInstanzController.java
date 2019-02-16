@@ -3,20 +3,19 @@ package de.th.koeln.fae.microservice_assoziierte_instanz.infrastructure.controll
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 
-import de.th.koeln.fae.microservice_assoziierte_instanz.models.DementiellVeraendertePerson;
+import de.th.koeln.fae.microservice_assoziierte_instanz.models.dvp.DementiellVeraendertePerson;
 import de.th.koeln.fae.microservice_assoziierte_instanz.repositories.DementiellVeraendertePersonRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.hateoas.Resource;
-import org.springframework.hateoas.Resources;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 import de.th.koeln.fae.microservice_assoziierte_instanz.repositories.AssoziierteInstanzRepository;
-import de.th.koeln.fae.microservice_assoziierte_instanz.models.AssoziierteInstanz;
+import de.th.koeln.fae.microservice_assoziierte_instanz.models.Asi.AssoziierteInstanz;
 
 import java.util.List;
 import java.util.Optional;
@@ -165,7 +164,7 @@ public class AssoziierteInstanzController {
      * Ausnahme: Die Liste der DVPs, die wird durch die Methode "verknupfeDVP" bearbeitet
      * @param rbAsi
      * @param asiid
-     * @return
+     * @return ok mit resource, bei erfolgreichem Update, not found, wenn asi oder dvp nicht gefunden werden konnte
      */
     @PutMapping(path = "/asis/{asiid}")
     public ResponseEntity<?> putAsi(@RequestBody AssoziierteInstanz rbAsi,

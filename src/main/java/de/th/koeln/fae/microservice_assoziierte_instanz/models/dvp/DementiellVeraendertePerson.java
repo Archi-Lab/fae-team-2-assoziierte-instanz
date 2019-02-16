@@ -1,12 +1,16 @@
-package de.th.koeln.fae.microservice_assoziierte_instanz.models;
+package de.th.koeln.fae.microservice_assoziierte_instanz.models.dvp;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import de.th.koeln.fae.microservice_assoziierte_instanz.models.Asi.AssoziierteInstanz;
+import de.th.koeln.fae.microservice_assoziierte_instanz.models.EntityUUID4;
+import de.th.koeln.fae.microservice_assoziierte_instanz.models.Nachname;
+import de.th.koeln.fae.microservice_assoziierte_instanz.models.Vorname;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class DementiellVeraendertePerson extends EntityUUID4{
+public class DementiellVeraendertePerson extends EntityUUID4 {
 
     @Embedded
     private Vorname vorname;
