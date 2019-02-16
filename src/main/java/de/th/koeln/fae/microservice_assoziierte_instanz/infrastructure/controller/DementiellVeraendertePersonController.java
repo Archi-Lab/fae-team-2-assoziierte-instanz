@@ -8,8 +8,6 @@ import org.springframework.hateoas.Resources;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.UUID;
-
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 
@@ -39,15 +37,15 @@ public class DementiellVeraendertePersonController {
         return  ResponseEntity.ok(resources);
     }
 
-    @PostMapping(path = "/dvps")
-    DementiellVeraendertePerson neuedvp(@RequestBody DementiellVeraendertePerson neueDvp){
-        return dementiellVeraendertePersonRepository.save(neueDvp);
-    }
-
-
-    @DeleteMapping("/dvps/{id}")
-    void loeschedvp(@PathVariable String id){
-        dementiellVeraendertePersonRepository.deleteById(UUID.fromString(id));
-    }
+//    @PostMapping(path = "/dvps")
+//    DementiellVeraendertePerson neuedvp(@RequestBody DementiellVeraendertePerson neueDvp){
+//        return dementiellVeraendertePersonRepository.save(neueDvp);
+//    }
+//
+//
+//    @DeleteMapping("/dvps/{id}")
+//    void loeschedvp(@PathVariable String id){
+//        dementiellVeraendertePersonRepository.deleteById(id);
+//    }
 
 }
