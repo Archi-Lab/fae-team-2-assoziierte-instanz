@@ -8,6 +8,8 @@ import org.springframework.hateoas.Resources;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.UUID;
+
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 
@@ -45,7 +47,7 @@ public class DementiellVeraendertePersonController {
 
     @DeleteMapping("/dvps/{id}")
     void loeschedvp(@PathVariable String id){
-        dementiellVeraendertePersonRepository.deleteById(id);
+        dementiellVeraendertePersonRepository.deleteById(UUID.fromString(id));
     }
 
 }

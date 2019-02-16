@@ -13,7 +13,7 @@ public class Vorname {
 
     public Vorname(String vorname){
         //darf keine Numerischen Zeichen enthalten
-        String expression = "^[a-zA-Z\\s]+";
+        String expression = "(?U)[\\p{L}\\p{M}\\s'-]+";
         if(!vorname.matches(expression)){
             throw new IllegalArgumentException("Ein Vorname darf nur aus Groß- bzw. Kleinbuchstaben bestehen.");
         }
