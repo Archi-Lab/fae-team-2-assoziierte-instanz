@@ -1,5 +1,6 @@
 package de.th.koeln.fae.microservice_assoziierte_instanz.models.Asi;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import de.th.koeln.fae.microservice_assoziierte_instanz.infrastructure.eventing.produce.EventPublishingEntityListener;
 import de.th.koeln.fae.microservice_assoziierte_instanz.infrastructure.eventing.produce.EventSource;
@@ -46,7 +47,8 @@ public class AssoziierteInstanz extends EntityUUID4 implements EventSource {
     private TelefonNummer telefonnummer;
 
     @Version
-    private Long version = 0L;
+    @JsonIgnore
+    private Long version;
 
     //region Getter, Setter
 
