@@ -6,6 +6,13 @@ import de.th.koeln.fae.microservice_assoziierte_instanz.infrastructure.eventing.
 import de.th.koeln.fae.microservice_assoziierte_instanz.models.Nachname;
 import de.th.koeln.fae.microservice_assoziierte_instanz.models.Vorname;
 
+/**
+ * Bei der Payload wird
+ *  - Vorname
+ *  - Nachname
+ *  - Id
+ *  abgegriffen
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DvpPayload extends EventPayload {
@@ -29,30 +36,6 @@ public class DvpPayload extends EventPayload {
     public void setNachname(Nachname nachname) {
         this.nachname = nachname;
     }
-//
-//    public String getAlter() {
-//        return alter;
-//    }
-//
-//    public void setAlter(String alter) {
-//        this.alter = alter;
-//    }
-//
-//    public String getBild() {
-//        return bild;
-//    }
-//
-//    public void setBild(String bild) {
-//        this.bild = bild;
-//    }
-//
-//    public String getTracker() {
-//        return tracker;
-//    }
-//
-//    public void setTracker(String tracker) {
-//        this.tracker = tracker;
-//    }
 
     public String getId(){
         return id;
