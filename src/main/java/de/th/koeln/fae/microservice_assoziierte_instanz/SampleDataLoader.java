@@ -21,7 +21,7 @@ public class SampleDataLoader implements ApplicationListener<ContextRefreshedEve
 
         asi.setVorname(new Vorname("Hans"));
         asi.setNachname(new Nachname("Wurst"));
-        asi.setEmail(new Email("a@b.c"));
+        asi.setEmail(new Email("address@test.com"));
         asi.setPasswort(new Passwort("hunter1"));
         asi.setRolle(Rolle.BEZUGSPERSON);
         asi.setUsername(new Username("hwurst"));
