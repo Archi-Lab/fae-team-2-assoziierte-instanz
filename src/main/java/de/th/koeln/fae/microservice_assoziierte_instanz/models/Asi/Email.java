@@ -8,11 +8,6 @@ public class Email {
     private String email;
 
     public Email(String email){
-
-        String expression = "\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}\\b";
-        if(!email.matches(expression)){
-            throw new IllegalArgumentException("Eine Email hat die Form \"something@somewhere.go\".");
-        }
         this.email = email;
     }
 
