@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BezugspersonApplication {
+public class AssoziierteInstanzApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BezugspersonApplication.class, args);
+		SpringApplication.run(AssoziierteInstanzApplication.class, args);
 	}
 }
