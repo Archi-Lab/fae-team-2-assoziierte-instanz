@@ -36,6 +36,8 @@ Mehrere Docker Container starten:
 docker-compose up --scale asi=2
 ```
 
+Belegter Port: 8021
+
 ## Acknowledgements
 
 * Der Eventing Code wurde von [REWE Digital](https://github.com/rewe-digital/integration-patterns) übernommen.
